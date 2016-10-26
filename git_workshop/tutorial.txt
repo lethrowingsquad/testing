@@ -1,0 +1,113 @@
+Well hello there :)
+
+Git Things Ready:
+=================
+
+We're assuming that you have Git already up and running on your computer, otherwise take a look below on how to install it:
+* Windows: go to "https://git-scm.com/download" and download the installer. Go through the installation process and make sure that you install "Git Bash"
+* Mac OS X: If running the command "git" from your terminal doesn't work, you can either follow the instructions you'll see in the terminal, or alternatively go to "https://git-scm.com/download" and install the Mac OS package and install it.
+* Linux (Ubuntu and Ubuntu Based): If running the command "git" from your terminal doesn't work, you can either follow the instructions you'll see in the terminal (type "sudo apt-get install git" in your teminal). 
+
+We also assume that you already have a GitHub account. If not, then go to "https://github.com" and make an account now. Take note of your username and password, you'll need it down the road for this tutorial.
+
+
+Let's Git Started:
+======================
+
+Note: Going forward, all commands are expected to be run in your Git Bash (on Windows) or your Terminal windows (Mac & Linux) unless stated otherwise.
+
+
+
+Clonning The Workshop:
+----------------------
+
+Go to the directory you want to clone the repo into and type "git clone https://github.com/m-alani/git_workshop.git"
+
+You'll have all the files for the workshop inside the directory called "git_workshop"  
+
+
+Working with your own repo:
+---------------------------
+
+Go to github.com, login with your account and create a new repo (green button saying "+ New repository". Name it "git_tutorial".
+  
+Now, let's make a local repo and try to upload it to our newly created repo on github.
+
+Create a directory locally, preferably named "git_tutorial" 
+
+Create a text file inside "git_tutorial" and name it "README.md"
+
+In your terminal/git bash, go inside the directory you just created
+
+Type "git init" (This will initialize an empty Git repo)
+
+Type "git add README.md" (This will add the file to the staging area)
+
+Type "git commit -m 'My first commit' " (Your first commit to the repo)
+
+Type "git remote add origin https://github.com/[username]/git_tutorial.git" (Add the repo you created on GitHub to the list of remotes in your local repo)
+
+Type "git push -u origin master" (This will push any commits you have on your master branch to your origin remote)
+
+Congrats, you've succesfully made changes locally, and pushed them to your GitHub repo (got check it out on your GitHub account)
+
+// Follow instructions in the workshop to see how to pull changes to your local repo.
+
+
+Forking someone else's repo:
+----------------------------
+
+In your browser, go to "https://github.com/m-alani/git_workshop"
+
+Click on the "Fork" option in the top-right corner. This will make a copy of the repo you're at into your own account.
+
+Use the commands you learned already to "clone" the repo you just forked (Don't forget, ask if you're not sure about something)
+
+Type "git checkout -b 'testing' " (This will copy everything you have in the current branch (master) into a new branch called 'testing') and also switches you to the new branch.
+
+Now that you have a local clone of the repo you forked from "m-alani", and you're working in a new branch, try opening the file "names.txt" in a text editor, and add your name under the line as instructed. Save the file once done.
+
+Type "git commit -am 'added my name' " (ask us how is this different than 'git add')
+
+Type "git branch" to see the branches in your repo, then type "git checkout master" to switch to that branch.
+
+Open "names.txt" and confirm that your name is not there (if you don't see why it's not there, ask us) 
+
+Type "git merge testing" (This will show you the differences between your current branch and 'testing', and merge them into your current branch 'master')
+
+Now that we've merged the branches, we don't really need 'testing', so, let's delete it.
+
+Type "git branch -d testing" (Ask about the difference between -d and -D switches)
+
+Now try pushing the commited changes from your local master to your GitHub origin (You've used the command before, but if you forget, just ask)
+
+// Ask us what a "pull request" is, and how to perform one
+
+
+Other useful commands:
+----------------------
+
+<< status >>
+git status (try it out to see what it does)
+
+<< log >>
+git log
+git log -p (to show the changes in each commit)
+git log -2 (to show the log for the last 2 commits only)
+git log --pretty=oneline (to show the commit id and message only on 1 line)
+   (other "pretty" options to try instead of "oneline": "short" or "full"
+
+<< diff >>
+git diff (will display nothing if there has been no changes after the last commit)
+git diff [branch1]..[branch2] (shows the difference between the 2 branches' heads)
+
+<< reset >>
+git reset --hard [commit_id] (Delete all changes and move back to the commit you indicated)
+
+<< checkout >> (to restore a single file to the last commited version you had)
+git checkout -- [filename] (this will basically discard all changes made to the file since last commit)
+
+
+
+
+Questions ?
